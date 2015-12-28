@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
 	def index
-		@idea = Idea.first
+		@idea = Idea.order("RANDOM()").first
 	end
 end
