@@ -1,0 +1,14 @@
+<h1>Enter Your Story Idea Details</h1>
+<%= simple_form_for @idea do |f| %>
+	<%= f.input :title %>
+	<br />
+	<%= f.input :plot %>
+	<br />
+	<%= f.input :character %>
+	<br />
+	<%= f.input :setting %>
+	<br />
+	<%= f.input :notes %>
+	<br />
+	<%= f.submit 'Create', :class => 'btn btn-info' %>
+<% end %>

@@ -10,6 +10,9 @@
 <body>
 	<header>
 		<!--Navigation Bar-->
+		<div class="col-xs-5 links">
+			<%= link_to 'New Idea', new_idea_path %>
+		</div>
 	</header>
 
 <h1>Enter Your Story Details</h1>
@@ -18,31 +21,27 @@
 
 <div class ="col-xs-3">
 <h4>TITLE:</h4>
-<input type="text" value="<%= @idea.title %>">
+<p><%= @idea.title %></p>
 
-<br />
 <br />
 
 <h4>PLOT:</h4>
-<textarea rows="10" cols="50"><%= @idea.plot %></textarea>
+<p><%= @idea.plot %></p>
 
-<br />
 <br />
 
 <h4>CHARACTERS:</h4>
-<textarea rows="10" cols="50"><%= @idea.character %></textarea>
+<p><%= @idea.character %></p>
 
-<br />
 <br />
 
 <h4>SETTING:</h4>
-<textarea rows="10" cols="50"><%= @idea.setting %></textarea>
+<p><%= @idea.setting %></p>
 
-<br />
 <br />
 
 <h4>NOTES:</h4>
-<textarea rows="10" cols="50"><%= @idea.notes %></textarea>
+<p><%= @idea.notes %></p>
 </div>
 
 </body>
