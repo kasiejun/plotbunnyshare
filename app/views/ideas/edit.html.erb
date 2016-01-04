@@ -1,52 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Plot Bunny Share</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-
-<body>
-	<header>
-		<!--Navigation Bar-->
-	</header>
-
-<h1>Enter Your Story Details</h1>
-
-<br/>
-
-<div class ="col-xs-3">
-<h4>TITLE:</h4>
-<input type="text" value="<%= @idea.title %>">
-
-<br />
-<br />
-
-<h4>PLOT:</h4>
-<textarea rows="10" cols="50"><%= @idea.plot %></textarea>
-
-<br />
-<br />
-
-<h4>CHARACTERS:</h4>
-<textarea rows="10" cols="50"><%= @idea.character %></textarea>
-
-<br />
-<br />
-
-<h4>SETTING:</h4>
-<textarea rows="10" cols="50"><%= @idea.setting %></textarea>
-
-<br />
-<br />
-
-<h4>NOTES:</h4>
-<textarea rows="10" cols="50"><%= @idea.notes %></textarea>
-</div>
-
-<!--NEED TO ADD EDIT BUTTON!-->
-<!--SHARE BUTTON HERE TOO?-->
-
-</body>
-</html>
+<h1>Edit Your Story Idea Details</h1>
+<%= simple_form_for @idea do |f| %>
+	<%= f.input :title %>
+	<br />
+	<%= f.input :plot %>
+	<br />
+	<%= f.input :character %>
+	<br />
+	<%= f.input :setting %>
+	<br />
+	<%= f.input :notes %>
+	<br />
+	<%= f.submit 'Save', :class => 'btn btn-info' %>
+<% end %>

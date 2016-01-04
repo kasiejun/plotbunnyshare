@@ -1,48 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Plot Bunny Share</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+<% @ideas.each do |idea| %> 
+	<div>
+		<h1><%= idea.title %></h1><br />
+		<h4>PLOT</h4>
+		<p><%= idea.plot %></p><br />
+		<h4>CHARACTERS</h4>
+		<p><%= idea.character %></p><br />
+		<h4>SETTING</h4>
+		<p><%= idea.setting %></p><br />
+		<h4>NOTES</h4>
+		<p><%= idea.notes %></p><br />
+	</div>
 
-<body>
-	<header>
-		<!--Navigation Bar-->
-		<div class="col-xs-5 links">
-			<%= link_to 'New Idea', new_idea_path %>
-		</div>
-	</header>
-
-<h1>Enter Your Story Details</h1>
-
-<br/>
-
-<div class ="col-xs-3">
-<h4>TITLE:</h4>
-<p><%= @idea.title %></p>
-
-<br />
-
-<h4>PLOT:</h4>
-<p><%= @idea.plot %></p>
-
-<br />
-
-<h4>CHARACTERS:</h4>
-<p><%= @idea.character %></p>
-
-<br />
-
-<h4>SETTING:</h4>
-<p><%= @idea.setting %></p>
-
-<br />
-
-<h4>NOTES:</h4>
-<p><%= @idea.notes %></p>
-</div>
-
-</body>
-</html>
+	<hr />
+	<% end %> 

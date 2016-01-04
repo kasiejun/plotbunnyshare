@@ -7,6 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<!--Navigation Bar-->
+		<div class="col-xs-5 links">
+			<%= link_to 'New Idea', new_idea_path %>
+		</div>
+	</header>
 
 <%= yield %>
 
