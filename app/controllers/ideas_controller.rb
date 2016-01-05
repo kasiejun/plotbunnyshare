@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
 	def index
-		@idea = Idea.all.page params[:page]
+		@idea = Idea.order("RANDOM()").first
 	end
 
 	def new
