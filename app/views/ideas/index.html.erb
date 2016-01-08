@@ -1,50 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Plot Bunny Share</title>
-	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+<% @ideas.each do |idea| %>
+	<div class="clear"></div>
+		<h3><%= link_to idea.title, idea_path(idea) %></h3><br />
+		<%= idea.title %><br /><br />
 
-<body>
-	<header>
-		<!--Navigation Bar-->
-	</header>
+		<h3>PLOT:</h3><br />
+		<%= idea.plot %><br /><br />
 
-<br/>
+		<h3>CHARACTERS:</h3><br />
+		<%= idea.character %><br /><br />
 
-<div class ="col-xs-3">
-<h4>TITLE:</h4>
-<input type="text" value="<%= @idea.title %>">
+		<h3>SETTING:</h3><br />
+		<%= idea.setting %><br /><br />
 
-<br />
-<br />
-
-<h4>PLOT:</h4>
-<textarea rows="10" cols="50"><%= @idea.plot %></textarea>
-
-<br />
-<br />
-
-<h4>CHARACTERS:</h4>
-<textarea rows="10" cols="50"><%= @idea.character %></textarea>
-
-<br />
-<br />
-
-<h4>SETTING:</h4>
-<textarea rows="10" cols="50"><%= @idea.setting %></textarea>
-
-<br />
-<br />
-
-<h4>NOTES:</h4>
-<textarea rows="10" cols="50"><%= @idea.notes %></textarea>
-</div>
-
-<!--NEED TO ADD EDIT BUTTON!-->
-<!--SHARE BUTTON HERE TOO?-->
-
-</body>
-</html>
+		<h3>NOTES:</h3><br />
+		<%= idea.notes %><br /><br />
+	<hr />
+<% end %>

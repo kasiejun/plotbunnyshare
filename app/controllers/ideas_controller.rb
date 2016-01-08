@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
 	def index
-		@idea = Idea.order("RANDOM()").first
+		@ideas = Idea.all
 	end
 
 	def new
@@ -16,10 +16,8 @@ class IdeasController < ApplicationController
 		@idea = Idea.find(params[:id])
 	end
 
-	def update
+	def show 
 		@idea = Idea.find(params[:id])
-		@idea.update_attributes(idea_params)
-		redirect_to root_path
 	end
 
 	private
