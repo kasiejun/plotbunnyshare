@@ -14,5 +14,9 @@
 
 		<h3>NOTES:</h3><br />
 		<%= idea.notes %><br /><br />
+
+		<% if idea.user.present? %> 
+		<small><%= idea.user.email %></small>
+		<% end %> 
 	<hr />
 <% end %>

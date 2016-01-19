@@ -1,4 +1,6 @@
 class IdeasController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create]
+
 	def index
 		@ideas = Idea.all
 	end
@@ -8,7 +10,7 @@ class IdeasController < ApplicationController
 	end
 
 	def create
-		Idea.create(idea_params)
+		current_user.ideas.create(idea_params)
 		redirect_to root_path
 	end
 
